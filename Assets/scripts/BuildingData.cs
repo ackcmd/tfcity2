@@ -8,6 +8,7 @@ public class BuildingData : MonoBehaviour
     //public RectTransform infoWindow;
     public string buildingName;
     public string description;
+    public string[] scenes;
 
     // Use this for initialization
     void Start () {

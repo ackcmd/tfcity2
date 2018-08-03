@@ -7,7 +7,7 @@ public class HighlightGroup : MonoBehaviour {
     public Shader highlightShader;
     public RectTransform infoWindow;
     List<Shader> currShaders;
-    //Shader[] currShader;
+    
 
 	// Use this for initialization
 	void Start () {
