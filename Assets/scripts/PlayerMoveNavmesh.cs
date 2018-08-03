@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class PlayerMoveNavmesh : MonoBehaviour {
     Animator animator;
     Vector3 nextPosition;
     NavMeshAgent agent;
+    RaycastHit hit = new RaycastHit();
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         animator = GameObject.FindObjectOfType<Animator>();
         nextPosition = transform.position;
         animator.SetBool("param_toidle", true);
@@ -24,9 +26,9 @@ public class PlayerMoveNavmesh : MonoBehaviour {
 
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
-            RaycastHit hit;
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
@@ -35,16 +37,25 @@ public class PlayerMoveNavmesh : MonoBehaviour {
                     nextPosition = hit.point;
                     animator.SetBool("param_toidle", false);
                     animator.SetBool("param_idletorunning", true);
+                    Debug.Log(nextPosition);
                 }
 
-                if (hit.transform.parent.tag == "building")
+                if (hit.transform.parent!= null)
                 {
-                    //hit.transform.parent.GetComponent
+                    if (hit.transform.parent.tag == "building")
+                    {
+                        nextPosition = hit.transform.parent.GetComponent<BuildingData>().entrance;
+                        animator.SetBool("param_toidle", false);
+                        animator.SetBool("param_idletorunning", true);
+                    }
+
                 }
 
-                if (hit.transform.parent.tag == "building")
+                if (hit.transform.tag == "building")
                 {
-                    //hit.transform.GetComponent
+                    nextPosition = hit.transform.GetComponent<BuildingData>().entrance;
+                    animator.SetBool("param_toidle", false);
+                    animator.SetBool("param_idletorunning", true);
                 }
             }
         }
@@ -64,7 +75,25 @@ public class PlayerMoveNavmesh : MonoBehaviour {
             agent.isStopped = true;
             agent.updateRotation = false;
             agent.updatePosition = false;
-            //agent.ResetPath();
+            if (hit.transform != null)
+            {
+                if (hit.transform.tag == "building")
+                {
+                    Debug.Log("Entering Building: " + hit.transform.name);
+                }
+                if (hit.transform.parent != null)
+                {
+                    if (hit.transform.parent.tag == "building")
+                    {
+                        Debug.Log("Entering Building: " + hit.transform.parent.name);
+                    }
+
+                }
+                hit = new RaycastHit();
+
+            }
+
+
         }
     }
 }

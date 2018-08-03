@@ -5,4 +5,5 @@ using UnityEngine;
 public class GlobalVars : MonoBehaviour {
 
     public Shader highlightShader;
+    public RectTransform infoWindow;
 }
