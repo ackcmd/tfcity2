@@ -30,9 +30,22 @@ public class PlayerMoveNavmesh : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                nextPosition = hit.point;
-                animator.SetBool("param_toidle", false);
-                animator.SetBool("param_idletorunning", true);
+                if (hit.transform.tag == "terrain")
+                {
+                    nextPosition = hit.point;
+                    animator.SetBool("param_toidle", false);
+                    animator.SetBool("param_idletorunning", true);
+                }
+
+                if (hit.transform.parent.tag == "building")
+                {
+                    //hit.transform.parent.GetComponent
+                }
+
+                if (hit.transform.parent.tag == "building")
+                {
+                    //hit.transform.GetComponent
+                }
             }
         }
         //transform.LookAt(nextPosition);
@@ -45,6 +58,7 @@ public class PlayerMoveNavmesh : MonoBehaviour {
         if (Vector3.Distance (nextPosition, transform.position) < 0.2f)
         {
             //nextPosition = transform.position;
+            //Debug.Log("Destination reached");
             animator.SetBool("param_idletorunning", false);
             animator.SetBool("param_toidle", true);
             agent.isStopped = true;
