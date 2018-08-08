@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1035469347886910}
+  m_IsPrefabParent: 1
+--- !u!1 &1035469347886910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4239299711217452}
+  - component: {fileID: 114105889315434934}
+  m_Layer: 0
+  m_Name: npc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4239299711217452
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1035469347886910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114105889315434934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1035469347886910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7255ccef5cd4447bf2c1e6abb6e76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcDescription: 
+  opinion1: 0
+  rank1: 0
+  strenght1: 0
+  dexterity1: 0
+  constitution1: 0
+  intellect1: 0
+  arcane1: 0
+  willpower1: 0
+  dominance1: 0
+  obedience1: 0
+  housekeeping1: 0
+  cooking1: 0
+  nurse1: 0
+  secretary1: 0
+  alchemy1: 0
+  etiquette1: 0
+  martial1: 0
+  fitness1: 0
+  dance1: 0
+  singing1: 0
+  music1: 0
+  petplay1: 0
+  magic1: 0
+  mentor1: 0
+  handjob1: 0
+  footjob1: 0
+  titjob1: 0
+  rubbing1: 0
+  kissing1: 0
+  licking1: 0
+  blowjob1: 0
+  rimming1: 0
+  vaginal_r1: 0
+  anal_r1: 0
+  vaginal_g1: 0
+  anal_g1: 0
+  twosome1: 0
+  threesome1: 0
+  gangbang1: 0
+  bukkake1: 0
+  seduction1: 0
+  masturbation1: 0
+  selfhumiliation1: 0
+  bondage1: 0
+  domination1: 0
+  torture1: 0
+  selfbondage1: 0
+  submission1: 0
+  masochism1: 0
+  g_shower1: 0
+  scat1: 0
+  zoo1: 0
+  fisting1: 0

@@ -9,6 +9,7 @@ public class PlayerMoveNavmesh : MonoBehaviour {
     Vector3 nextPosition;
     NavMeshAgent agent;
     RaycastHit hit = new RaycastHit();
+    string objectName;
 
     // Use this for initialization
     void Start () {
@@ -80,17 +81,19 @@ public class PlayerMoveNavmesh : MonoBehaviour {
                 if (hit.transform.tag == "building")
                 {
                     Debug.Log("Entering Building: " + hit.transform.name);
+                    objectName = hit.transform.name;
                 }
                 if (hit.transform.parent != null)
                 {
                     if (hit.transform.parent.tag == "building")
                     {
                         Debug.Log("Entering Building: " + hit.transform.parent.name);
+                        objectName = hit.transform.parent.name;
                     }
 
                 }
                 hit = new RaycastHit();
-
+                EventManager.TriggerEvent(objectName);
             }
 
 
