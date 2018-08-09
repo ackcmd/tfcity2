@@ -3,13 +3,15 @@ using UnityEngine.Events;
 using System.Collections;
 using UnityEngine.UI;
 
-public class Brothel : MonoBehaviour
+public class BuildingManager : MonoBehaviour
 {
     public string EventToCatch;
     public GameObject npcOnEnter;
     RectTransform LocationWindow;
     RectTransform SecondaryText;
     GlobalVars globalvars;
+    public delegate int npcHandler(string command);
+    public npcHandler defaultAction;
     //public UnityAction action;
 
     private UnityAction someListener;
@@ -56,7 +58,8 @@ public class Brothel : MonoBehaviour
         //LocationWindow.Find("SecondaryText").Find("Text").GetComponent<Text>().text = GetComponent<BuildingData>().ExtendedDescription;
         LocationWindow.SetAsLastSibling();
         LocationWindow.gameObject.SetActive(true);
-        Component component = (NPC)npcOnEnter.GetComponent(npcOnEnter.name);
+        globalvars.Mainbackground.GetComponent<Image>().sprite = transform.GetComponent<BuildingData>().interior;
+        defaultAction("StartDlg");
         
     }
 

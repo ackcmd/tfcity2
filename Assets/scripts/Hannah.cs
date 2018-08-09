@@ -2,12 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class Hannah : NPC {
 
+    
     RectTransform LocationWindow;
     RectTransform SecondaryText;
     GlobalVars globalvars;
+    Dictionary<string, string> actions;
+    List<GameObject> workers;
+
+    int Interact (string command)
+    {
+        Debug.Log(command);
+        switch (command)
+        {
+            case "StartDlg":
+                StartDialogue();
+                break;
+
+            case "exit":
+                ExitDialogue();
+                break;
+
+            case "smalltalk":
+                SmallTalk();
+                break;
+        }
+        return (0);
+    }
+
+    private void SmallTalk()
+    {
+        globalvars = FindObjectOfType<GlobalVars>();
+        LocationWindow = globalvars.LocationWindow;
+        globalvars.MainText.GetComponent<Text>().text = "This weather is crazy! It was cold yesterday and today I came in with an open jacket. I hope it stays warm, don’t you?";
+        actions = new Dictionary<string, string>();
+        actions.Add("smalltalk", "Small talk");
+        actions.Add("quest", "Quest");
+        actions.Add("standart", "Standart service");
+        actions.Add("elite", "Elite service");
+        actions.Add("exit", "Exit");
+        SetupActions(actions);
+    }
+
+    void ExitDialogue()
+    {
+        globalvars = FindObjectOfType<GlobalVars>();
+        LocationWindow = globalvars.LocationWindow;
+        LocationWindow.gameObject.SetActive(false);
+    }
 
     int StartDialogue()
     {
@@ -29,13 +74,52 @@ public class Hannah : NPC {
                     break;
             }
         }
-
+        globalvars.MainImage.GetComponent<Image>().sprite = this.npcAvatar;
+        globalvars.MainText.GetComponent<Text>().text = "Hello, {playertitle} {playername}! Nice to see you again! If we can help you in ANY way possible, just let me know.";
+        actions = new Dictionary<string, string>();
+        actions.Add("smalltalk","Small talk");
+        actions.Add("quest", "Quest");
+        actions.Add("standart", "Standart service");
+        actions.Add("elite", "Elite service");
+        actions.Add("exit", "Exit");
+        SetupActions(actions);
         return (returnValue);
     }
 
+    void SetupActions(Dictionary<string, string> actions)
+    {
+        globalvars = FindObjectOfType<GlobalVars>();
+        ClearActionArea();
+        //actions = new Dictionary<string, string>();
+        foreach (KeyValuePair<string, string> action in actions)
+        {
+            GameObject Button = GameObject.Instantiate(globalvars.buttonPrefab) as GameObject;
+            Button.transform.SetParent(globalvars.ActionArea.transform);
+            Button.GetComponentInChildren<Text>().text = action.Value;
+            //Button.GetComponent<ButtonData>().param = action.Key;
+            Button.transform.localScale = new Vector3(1,1,1);
+            Button.GetComponent<Button>().onClick.AddListener(delegate { Interact(action.Key); });
+        }
+    }
+
+    void ClearActionArea()
+    {
+        foreach (Transform child in globalvars.ActionArea.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
 
 	// Use this for initialization
 	void Start () {
+        //this.transform.parent.GetComponent<BuildingManager>().defaultAction = StartDialogue;
+        this.transform.parent.GetComponent<BuildingManager>().defaultAction = Interact;
+        workers = new List<GameObject>();
+        foreach (Transform child in this.transform.parent.transform)
+        {
+            if (child.tag == "worker") workers.Add(child.gameObject);
+            //GameObject.Destroy(child.gameObject);
+        }
         Opinion = opinion1; //opinion on player 0-10
 
         //base stats

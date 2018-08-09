@@ -8,7 +8,7 @@ public class NPC : MonoBehaviour {
 
     public string npcName;
     public string npcDescription;
-    public Image npcAvatar;
+    public Sprite npcAvatar;
     private string[] opinions = { "hate", "unfriendly", "unfriendly", "cold", "cold", "neutral", "neutral", "friendly", "friendly", "friendly", "love" };
     private string[] ranks = { "slave", "freeman", "citizen", "noble", "legend" };
 

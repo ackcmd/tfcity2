@@ -8,4 +8,9 @@ public class GlobalVars : MonoBehaviour {
     public RectTransform infoWindow;
     public RectTransform LocationWindow;
     public RectTransform SecondaryText;
+    public RectTransform Mainbackground;
+    public RectTransform MainImage;
+    public GameObject buttonPrefab;
+    public RectTransform ActionArea;
+    public RectTransform MainText;
 }

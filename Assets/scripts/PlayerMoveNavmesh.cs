@@ -76,6 +76,7 @@ public class PlayerMoveNavmesh : MonoBehaviour {
             agent.isStopped = true;
             agent.updateRotation = false;
             agent.updatePosition = false;
+            objectName = null;
             if (hit.transform != null)
             {
                 if (hit.transform.tag == "building")
@@ -93,7 +94,7 @@ public class PlayerMoveNavmesh : MonoBehaviour {
 
                 }
                 hit = new RaycastHit();
-                EventManager.TriggerEvent(objectName);
+                if (objectName != null) EventManager.TriggerEvent(objectName);
             }
 
 

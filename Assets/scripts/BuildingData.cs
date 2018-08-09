@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingData : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class BuildingData : MonoBehaviour
     public string buildingName;
     public string description;
     public string ExtendedDescription;
+    public Sprite interior;
     //public string[] scenes;
 
     // Use this for initialization
