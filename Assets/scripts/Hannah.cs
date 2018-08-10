@@ -12,6 +12,7 @@ public class Hannah : NPC {
     GlobalVars globalvars;
     Dictionary<string, string> actions;
     List<GameObject> workers;
+    int selectedWorker = 0;
 
     int Interact (string command)
     {
@@ -29,8 +30,85 @@ public class Hannah : NPC {
             case "smalltalk":
                 SmallTalk();
                 break;
+
+            case "standart":
+                StandartSevice();
+                break;
+
+            case "next":
+                NextWorker();
+                break;
+
+            case "previous":
+                PreviousWorker();
+                break;
+
+            case "select":
+                SelectWorker();
+                break;
+
+            default:
+                StartDialogue();
+                break;
         }
         return (0);
+    }
+
+    private void SelectWorker()
+    {
+        workers[selectedWorker].GetComponent<BrothelWorker>().Interact("Start");
+    }
+
+    private void PreviousWorker()
+    {
+        selectedWorker--;
+        if (selectedWorker <0) selectedWorker = workers.Count-1;
+        ShowWorker(selectedWorker);
+    }
+
+    private void NextWorker()
+    {
+        selectedWorker++;
+        if (selectedWorker > workers.Count-1) selectedWorker = 0;
+        ShowWorker(selectedWorker);
+    }
+
+    private void ShowWorker(int worker)
+    {
+        globalvars = FindObjectOfType<GlobalVars>();
+        LocationWindow = globalvars.LocationWindow;
+        SecondaryText = globalvars.SecondaryText;
+        foreach (Transform child in SecondaryText)
+        {
+            switch (child.name)
+            {
+                case "Header":
+                    child.GetComponent<Text>().text = workers[selectedWorker].GetComponent<BrothelWorker>().npcName;
+                    break;
+                case "Text":
+                    Text text = child.GetComponent<Text>();
+                    text.text = workers[selectedWorker].GetComponent<BrothelWorker>().npcDescription +"\n";
+                    Dictionary<string, string> skills = workers[selectedWorker].GetComponent<BrothelWorker>().GetSexSkillsBasicTxt();
+                    foreach (KeyValuePair<string, string> skill in skills)
+                    {
+                        text.text += skill.Key + ": " + skill.Value + "\n";
+                    }
+                    break;
+            }
+        }
+        globalvars.MainImage.GetComponent<Image>().sprite = workers[selectedWorker].GetComponent<BrothelWorker>().npcAvatar;
+    }
+
+    private void StandartSevice()
+    {
+        selectedWorker = 0;
+        ShowWorker(selectedWorker);
+        actions = new Dictionary<string, string>();
+        actions.Add("previous", "Show previous");
+        actions.Add("next", "Show Next");
+        actions.Add("select", "Select");
+        actions.Add("cancel", "Cancel");
+        SetupActions(actions);
     }
 
     private void SmallTalk()
@@ -112,7 +190,7 @@ public class Hannah : NPC {
 
 	// Use this for initialization
 	void Start () {
-        //this.transform.parent.GetComponent<BuildingManager>().defaultAction = StartDialogue;
+        this.Init();
         this.transform.parent.GetComponent<BuildingManager>().defaultAction = Interact;
         workers = new List<GameObject>();
         foreach (Transform child in this.transform.parent.transform)
@@ -120,83 +198,6 @@ public class Hannah : NPC {
             if (child.tag == "worker") workers.Add(child.gameObject);
             //GameObject.Destroy(child.gameObject);
         }
-        Opinion = opinion1; //opinion on player 0-10
-
-        //base stats
-        Rank = rank1;
-        //0 - slave
-        //1 - freeman
-        //2 - citizen
-        //3 - noble
-        //4 - legend
-
-        Strenght = strenght1; //0-10
-        Dexterity = dexterity1;//0-10
-        Constitution = constitution1;//0-10
-
-        Intellect = intellect1;//0-10
-        Arcane = arcane1;//0-10
-        Willpower = willpower1;//0-10
-
-        //special stats
-        Dominance = dominance1;//0-100
-        Obedience = obedience1;//0-100
-
-        //common skills
-        Housekeeping = housekeeping1;//0-100
-        Cooking = cooking1;//0-100
-        Nurse = nurse1;//0-100
-        Secretary = secretary1;//0-100
-        Alchemy = alchemy1;//0-100
-        Etiquette = etiquette1;//0-100
-        Martial = martial1;//0-100
-        Fitness = fitness1;//0-100
-        Dance = dance1;//0-100
-        Singing = singing1;//0-100
-        Music = music1;//0-100
-        Petplay = petplay1;//0-100
-        Magic = magic1;//0-100
-        Mentor = mentor1;//0-100
-
-        //sex skills
-
-        Handjob = handjob1;//0-100
-        Footjob = footjob1;//0-100
-        Titjob = titjob1;//0-100
-        Rubbing = rubbing1;//0-100
-
-        Kissing = kissing1;//0-100
-        Licking = licking1;//0-100
-        Blowjob = blowjob1;//0-100
-        Rimming = rimming1;//0-100
-
-        Vaginal_r = vaginal_r1;//0-100
-        Anal_r = anal_r1;//0-100
-        Vaginal_g = vaginal_g1;//0-100
-        Anal_g = anal_g1;//0-100
-
-        Twosome = twosome1;//0-100
-        Threesome = threesome1;//0-100
-        Gangbang = gangbang1;//0-100
-        Bukkake = bukkake1;//0-100
-
-        Seduction = seduction1;//0-100
-        Masturbation = masturbation1;//0-100
-        Selfhumiliation = selfhumiliation1;//0-100
-
-        Bondage = bondage1;//0-100
-        Domination = domination1;//0-100
-        Torture = torture1;//0-100
-
-        Selfbondage = selfbondage1;//0-100
-        Submission = submission1;//0-100
-        Masochism = masochism1;//0-100
-
-        G_shower = g_shower1;//0-100
-        Scat = scat1;//0-100
-        Zoo = zoo1;//0-100
-        Fisting = fisting1;//0-100   
-
     }
 	
 	// Update is called once per frame

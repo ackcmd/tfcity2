@@ -19517,52 +19517,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 1.182, z: 0}
   m_TimeToStationary: 0.5
---- !u!1001 &1214957159
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1272053337}
-    m_Modifications:
-    - target: {fileID: 4239299711217452, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239299711217452, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239299711217452, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239299711217452, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239299711217452, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239299711217452, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239299711217452, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4239299711217452, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1035469347886910, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-      propertyPath: m_TagString
-      value: worker
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 541b551bffb730445bb73aa8f6a88352, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1217744510
 Prefab:
   m_ObjectHideFlags: 0
@@ -34304,6 +34258,102 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63e675fe3b6b9646beb49d9dd3e30ba, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2018277266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2018277267}
+  - component: {fileID: 2018277268}
+  m_Layer: 0
+  m_Name: npc3
+  m_TagString: worker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2018277267
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018277266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1272053337}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2018277268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018277266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61fa27fca70d5a4d8b55911f2ab5b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Kate
+  npcDescription: 
+  npcAvatar: {fileID: 21300000, guid: 0018f6022d329d14e952609a46b58679, type: 3}
+  opinion1: 0
+  rank1: 0
+  strenght1: 0
+  dexterity1: 0
+  constitution1: 0
+  intellect1: 0
+  arcane1: 0
+  willpower1: 0
+  dominance1: 0
+  obedience1: 0
+  housekeeping1: 0
+  cooking1: 0
+  nurse1: 0
+  secretary1: 0
+  alchemy1: 0
+  etiquette1: 0
+  martial1: 0
+  fitness1: 0
+  dance1: 0
+  singing1: 0
+  music1: 0
+  petplay1: 0
+  magic1: 0
+  mentor1: 0
+  handjob1: 0
+  footjob1: 0
+  titjob1: 0
+  rubbing1: 0
+  kissing1: 0
+  licking1: 0
+  blowjob1: 0
+  rimming1: 0
+  vaginal_r1: 0
+  anal_r1: 0
+  vaginal_g1: 0
+  anal_g1: 0
+  twosome1: 0
+  threesome1: 0
+  gangbang1: 0
+  bukkake1: 0
+  seduction1: 0
+  masturbation1: 0
+  selfhumiliation1: 0
+  bondage1: 0
+  domination1: 0
+  torture1: 0
+  selfbondage1: 0
+  submission1: 0
+  masochism1: 0
+  g_shower1: 0
+  scat1: 0
+  zoo1: 0
+  fisting1: 0
 --- !u!1001 &2019119274
 Prefab:
   m_ObjectHideFlags: 0
@@ -35033,6 +35083,102 @@ MonoBehaviour:
   cellPrefab: {fileID: 224555224421576746, guid: dc4d32642e5bb4d4c994f43e0c877453,
     type: 2}
   inventorySize: 40
+--- !u!1 &2052413910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2052413911}
+  - component: {fileID: 2052413912}
+  m_Layer: 0
+  m_Name: npc1
+  m_TagString: worker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2052413911
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052413910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1272053337}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2052413912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052413910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61fa27fca70d5a4d8b55911f2ab5b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Lily
+  npcDescription: 
+  npcAvatar: {fileID: 21300000, guid: 4f21d05f73ec31b47b8f4b5d8ea1cd30, type: 3}
+  opinion1: 0
+  rank1: 0
+  strenght1: 0
+  dexterity1: 0
+  constitution1: 0
+  intellect1: 0
+  arcane1: 0
+  willpower1: 0
+  dominance1: 0
+  obedience1: 0
+  housekeeping1: 0
+  cooking1: 0
+  nurse1: 0
+  secretary1: 0
+  alchemy1: 0
+  etiquette1: 0
+  martial1: 0
+  fitness1: 0
+  dance1: 0
+  singing1: 0
+  music1: 0
+  petplay1: 0
+  magic1: 0
+  mentor1: 0
+  handjob1: 0
+  footjob1: 0
+  titjob1: 0
+  rubbing1: 0
+  kissing1: 0
+  licking1: 0
+  blowjob1: 0
+  rimming1: 0
+  vaginal_r1: 0
+  anal_r1: 0
+  vaginal_g1: 0
+  anal_g1: 0
+  twosome1: 0
+  threesome1: 0
+  gangbang1: 0
+  bukkake1: 0
+  seduction1: 0
+  masturbation1: 0
+  selfhumiliation1: 0
+  bondage1: 0
+  domination1: 0
+  torture1: 0
+  selfbondage1: 0
+  submission1: 0
+  masochism1: 0
+  g_shower1: 0
+  scat1: 0
+  zoo1: 0
+  fisting1: 0
 --- !u!1001 &2056535294
 Prefab:
   m_ObjectHideFlags: 0
@@ -35546,6 +35692,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2093146240}
+  - component: {fileID: 2093146241}
   m_Layer: 0
   m_Name: npc2
   m_TagString: worker
@@ -35564,8 +35711,75 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1272053337}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2093146241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093146239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61fa27fca70d5a4d8b55911f2ab5b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Rosie
+  npcDescription: Description placeholder.
+  npcAvatar: {fileID: 21300000, guid: d6729bd6b620bb848b9dc158f2134432, type: 3}
+  opinion1: 5
+  rank1: 0
+  strenght1: 3
+  dexterity1: 5
+  constitution1: 6
+  intellect1: 6
+  arcane1: 1
+  willpower1: 5
+  dominance1: 170
+  obedience1: 450
+  housekeeping1: 200
+  cooking1: 200
+  nurse1: 100
+  secretary1: 0
+  alchemy1: 0
+  etiquette1: 300
+  martial1: 0
+  fitness1: 400
+  dance1: 300
+  singing1: 200
+  music1: 100
+  petplay1: 0
+  magic1: 0
+  mentor1: 0
+  handjob1: 350
+  footjob1: 300
+  titjob1: 400
+  rubbing1: 400
+  kissing1: 450
+  licking1: 400
+  blowjob1: 450
+  rimming1: 300
+  vaginal_r1: 500
+  anal_r1: 500
+  vaginal_g1: 500
+  anal_g1: 500
+  twosome1: 400
+  threesome1: 300
+  gangbang1: 200
+  bukkake1: 400
+  seduction1: 400
+  masturbation1: 450
+  selfhumiliation1: 400
+  bondage1: 500
+  domination1: 500
+  torture1: 500
+  selfbondage1: 400
+  submission1: 400
+  masochism1: 400
+  g_shower1: 100
+  scat1: 100
+  zoo1: 100
+  fisting1: 100
 --- !u!1 &2094138237 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 49bfd2e7a273e7a4ca574b30808dd0b4, type: 2}

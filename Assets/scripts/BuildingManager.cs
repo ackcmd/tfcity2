@@ -20,6 +20,11 @@ public class BuildingManager : MonoBehaviour
     {
         someListener = new UnityAction(Enter);
         EventToCatch = this.transform.name;
+        foreach (Transform child in this.transform)
+        {
+            if (child.tag == "worker") child.GetComponent<BrothelWorker>().Init();
+            //GameObject.Destroy(child.gameObject);
+        }
     }
 
     void OnEnable()
